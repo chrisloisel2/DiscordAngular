@@ -1,0 +1,15 @@
+.loginForm{
+	margin-top: 10%;
+	margin-left: 30%;
+	margin-right: 30%;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: white;
+	font-size: 30px;
+	background-color: #0a022d;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
+}

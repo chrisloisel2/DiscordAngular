@@ -12,7 +12,9 @@ export class LoginComponent {
 	// Creer un formulaire de connexion
 
 	// formulaire de connexion
+	// formGroupe opbject qui contient les controles du formulaire
 	loginForm = new FormGroup({
+		// FormControls sont les champs du formulaire
 		username: new FormControl(''),
 		password: new FormControl('')
 	});
@@ -31,7 +33,4 @@ export class LoginComponent {
 		// Envoyer les informations de connexion au serveur
 		console.log(this.loginForm.value);
 	}
-
-
-
 }

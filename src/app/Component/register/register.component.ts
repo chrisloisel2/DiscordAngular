@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
 	selector: 'app-register',
@@ -10,13 +11,19 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class RegisterComponent {
 
+	constructor(public auth: AuthService) { }
+
 	register() {
 		console.log(this.registerForm.value);
+		let { name, password, email } = this.registerForm.value;
+		this.auth.register(name, password, email).subscribe((data) => {
+			console.log(data);
+		});
 	}
 
 	// Formulaire d'inscription
 	registerForm = new FormGroup({
-		username: new FormControl(''),
+		name: new FormControl(''),
 		password: new FormControl(''),
 		email: new FormControl('')
 	});
